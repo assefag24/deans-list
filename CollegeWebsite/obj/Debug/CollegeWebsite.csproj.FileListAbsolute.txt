@@ -1,0 +1,18 @@
+C:\Users\Dylan\Documents\Visual Studio 2017\Projects\WindowsFormsApp2\CollegeWebsite\obj\Debug\CollegeWebsite.csprojResolveAssemblyReference.cache
+C:\Users\Dylan\Documents\Visual Studio 2017\Projects\WindowsFormsApp2\CollegeWebsite\obj\Debug\CollegeWebsite.Properties.Resources.resources
+C:\Users\Dylan\Documents\Visual Studio 2017\Projects\WindowsFormsApp2\CollegeWebsite\obj\Debug\CollegeWebsite.Website.resources
+C:\Users\Dylan\Documents\Visual Studio 2017\Projects\WindowsFormsApp2\CollegeWebsite\obj\Debug\CollegeWebsite.csproj.GenerateResource.Cache
+C:\Users\Dylan\Documents\Visual Studio 2017\Projects\WindowsFormsApp2\CollegeWebsite\bin\Debug\CollegeWebsite.exe.config
+C:\Users\Dylan\Documents\Visual Studio 2017\Projects\WindowsFormsApp2\CollegeWebsite\bin\Debug\CollegeWebsite.exe
+C:\Users\Dylan\Documents\Visual Studio 2017\Projects\WindowsFormsApp2\CollegeWebsite\bin\Debug\CollegeWebsite.pdb
+C:\Users\Dylan\Documents\Visual Studio 2017\Projects\WindowsFormsApp2\CollegeWebsite\obj\Debug\CollegeWebsite.exe
+C:\Users\Dylan\Documents\Visual Studio 2017\Projects\WindowsFormsApp2\CollegeWebsite\obj\Debug\CollegeWebsite.pdb
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\CollegeWebsite\bin\Debug\CollegeWebsite.exe.config
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\CollegeWebsite\bin\Debug\CollegeWebsite.exe
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\CollegeWebsite\bin\Debug\CollegeWebsite.pdb
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\CollegeWebsite\obj\Debug\CollegeWebsite.csprojResolveAssemblyReference.cache
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\CollegeWebsite\obj\Debug\CollegeWebsite.Properties.Resources.resources
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\CollegeWebsite\obj\Debug\CollegeWebsite.Website.resources
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\CollegeWebsite\obj\Debug\CollegeWebsite.csproj.GenerateResource.Cache
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\CollegeWebsite\obj\Debug\CollegeWebsite.exe
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\CollegeWebsite\obj\Debug\CollegeWebsite.pdb

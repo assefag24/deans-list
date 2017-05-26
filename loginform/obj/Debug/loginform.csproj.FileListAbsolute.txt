@@ -1,0 +1,9 @@
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\loginform\obj\Debug\loginform.csprojResolveAssemblyReference.cache
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\loginform\obj\Debug\loginform.loginpage.resources
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\loginform\obj\Debug\loginform.Properties.Resources.resources
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\loginform\obj\Debug\loginform.csproj.GenerateResource.Cache
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\loginform\bin\Debug\loginform.exe.config
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\loginform\bin\Debug\loginform.exe
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\loginform\bin\Debug\loginform.pdb
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\loginform\obj\Debug\loginform.exe
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\loginform\obj\Debug\loginform.pdb

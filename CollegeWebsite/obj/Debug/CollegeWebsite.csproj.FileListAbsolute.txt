@@ -16,3 +16,12 @@ C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\CollegeWebsite\obj\De
 C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\CollegeWebsite\obj\Debug\CollegeWebsite.csproj.GenerateResource.Cache
 C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\CollegeWebsite\obj\Debug\CollegeWebsite.exe
 C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\CollegeWebsite\obj\Debug\CollegeWebsite.pdb
+C:\Users\Dylan\Desktop\deans-list\deans-list\CollegeWebsite\bin\Debug\CollegeWebsite.exe.config
+C:\Users\Dylan\Desktop\deans-list\deans-list\CollegeWebsite\bin\Debug\CollegeWebsite.exe
+C:\Users\Dylan\Desktop\deans-list\deans-list\CollegeWebsite\bin\Debug\CollegeWebsite.pdb
+C:\Users\Dylan\Desktop\deans-list\deans-list\CollegeWebsite\obj\Debug\CollegeWebsite.csprojResolveAssemblyReference.cache
+C:\Users\Dylan\Desktop\deans-list\deans-list\CollegeWebsite\obj\Debug\CollegeWebsite.Properties.Resources.resources
+C:\Users\Dylan\Desktop\deans-list\deans-list\CollegeWebsite\obj\Debug\CollegeWebsite.Website.resources
+C:\Users\Dylan\Desktop\deans-list\deans-list\CollegeWebsite\obj\Debug\CollegeWebsite.csproj.GenerateResource.Cache
+C:\Users\Dylan\Desktop\deans-list\deans-list\CollegeWebsite\obj\Debug\CollegeWebsite.exe
+C:\Users\Dylan\Desktop\deans-list\deans-list\CollegeWebsite\obj\Debug\CollegeWebsite.pdb

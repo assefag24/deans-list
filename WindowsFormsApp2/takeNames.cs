@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary1;
-using CollegeWebsite;
 using loginform;
 
 namespace WindowsFormsApp2
@@ -26,13 +25,6 @@ namespace WindowsFormsApp2
         public takeNames()
         {
             InitializeComponent();
-            
-            printNames.DataSource = players;
-            addedNames.DataSource = printNames;
-
-            addedNames.DisplayMember = "display";
-            addedNames.ValueMember = "display";
-
             
         }
 
@@ -82,56 +74,14 @@ namespace WindowsFormsApp2
             list.allStudents.AddRange(players);
             dummyData();
             list.allStudents.Sort((x, y) => string.Compare(x.lastName, y.lastName));
-
-            printList.DataSource = list.allStudents;
-            displayListOfNames.DataSource = printList;
-
-            displayListOfNames.DisplayMember = "display";
-            displayListOfNames.ValueMember = "display";
             
-            panel1.Visible = true;
-        }
+            loginpage newGame = new loginpage();
+            foreach (Student student in list.allStudents)
+            {
+                newGame.studentTable.Rows.Add(student.lastName, student.firstName, convertGrade(student.MathClass), convertGrade(student.Science), convertGrade(student.English), convertGrade(student.French), convertGrade(student.History), convertGrade(student.Psychology), student.GPA);
+            };
 
-        private void change_Click(object sender, EventArgs e)
-        {
-            studentSelected = (Student)displayListOfNames.SelectedItem;
-                        
-            studentLast.Text = studentSelected.lastName + ", " + studentSelected.firstName;
-            gpaDisplay.Text = "GPA: " + System.Convert.ToString(studentSelected.GPA);
-
-            mathGrade.Text = convertGrade(studentSelected.MathClass);
-            scienceGrade.Text = convertGrade(studentSelected.Science);
-            englishGrade.Text = convertGrade(studentSelected.English);
-            frenchGrade.Text = convertGrade(studentSelected.French);
-            historyGrade.Text = convertGrade(studentSelected.History);
-            psychologyGrade.Text = convertGrade(studentSelected.Psychology);
-            
-            panel2.Visible = true;
-            panel1.Visible = false;
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            decimal newM = gradeReturn(mathGrade.Text);
-            decimal newS = gradeReturn(scienceGrade.Text);
-            decimal newEn = gradeReturn(englishGrade.Text);
-            decimal newF = gradeReturn(frenchGrade.Text);
-            decimal newH = gradeReturn(historyGrade.Text);
-            decimal newP = gradeReturn(psychologyGrade.Text);
-            decimal newGpa = (newM + newS + newEn + newF + newH + newP) / 6;
-
-
-            studentSelected.MathClass = newM;
-            studentSelected.Science = newS;
-            studentSelected.English = newEn;
-            studentSelected.French = newF;
-            studentSelected.History = newH;
-            studentSelected.Psychology = newP;
-            studentSelected.GPA = newGpa;
-            printList.ResetBindings(false);
-            panel2.Visible = false;
-            panel1.Visible = true;
+            newGame.Show();
         }
 
         private void dummyData()
@@ -183,6 +133,10 @@ namespace WindowsFormsApp2
             {
                 y = "A";
             }
+            else
+            {
+                y = "A";
+            }
 
             return y;
         }
@@ -204,11 +158,7 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void startWebsite_Click(object sender, EventArgs e)
-        {
-            loginpage newGame = new loginpage();
 
-            newGame.Show();
-        }
+
     }
 }

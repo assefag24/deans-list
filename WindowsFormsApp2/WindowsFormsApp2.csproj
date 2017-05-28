@@ -93,10 +93,6 @@
       <Project>{efe6291e-4611-48d1-aabd-5f22cec66088}</Project>
       <Name>ClassLibrary1</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CollegeWebsite\CollegeWebsite.csproj">
-      <Project>{1927383f-a9f3-4dd2-8509-2b256158d308}</Project>
-      <Name>CollegeWebsite</Name>
-    </ProjectReference>
     <ProjectReference Include="..\loginform\loginform.csproj">
       <Project>{af842893-1f45-4661-b237-81a0e3606365}</Project>
       <Name>loginform</Name>

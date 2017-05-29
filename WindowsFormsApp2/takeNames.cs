@@ -17,13 +17,17 @@ namespace WindowsFormsApp2
         BindingSource printNames = new BindingSource();
         BindingSource printList = new BindingSource();
         List<Student> players = new List<Student>();
-        private ListOfNames list = new ListOfNames();
         private Student student = new Student();
-        private Game gameInfo = new Game();              
+        private Game gameInfo = new Game();
+        private ListOfNames list;
 
         public takeNames()
         {
-            InitializeComponent();         
+            InitializeComponent();
+
+            playerTable.AutoGenerateColumns = true;
+            playerTable.DataSource = players;
+
         }
 
         private void addName_Click(object sender, EventArgs e)
@@ -37,12 +41,12 @@ namespace WindowsFormsApp2
                 nameError.Text = "";
                 string[] grades = { "D", "F" };
                 Random r = new Random();
-                int m = r.Next(1);
-                int s = r.Next(1);
-                int en = r.Next(1);
-                int f = r.Next(1);
-                int h = r.Next(1);
-                int p = r.Next(1);
+                int m = r.Next(2);
+                int s = r.Next(2);
+                int en = r.Next(2);
+                int f = r.Next(2);
+                int h = r.Next(2);
+                int p = r.Next(2);
                 string mG = grades[m];
                 string sG = grades[s];
                 string enG = grades[en];
@@ -67,7 +71,8 @@ namespace WindowsFormsApp2
 
                 first.Clear();
                 last.Clear();
-                printNames.ResetBindings(false);
+                playerTable.DataSource = null;
+                playerTable.DataSource = players;
             }
         }
 
@@ -75,10 +80,12 @@ namespace WindowsFormsApp2
         {
             if (string.IsNullOrWhiteSpace(gameInfo.username) || string.IsNullOrWhiteSpace(gameInfo.password))
             {
-                passwordInfo.Text = "Please save a Username and Password";
+                startFail.Text = "Please save a Username and Password";
             }
             else
             {
+                list = new ListOfNames();
+
                 list.allStudents.AddRange(players);
                 dummyData();
                 list.allStudents.Sort((x, y) => string.Compare(x.lastName, y.lastName));
@@ -104,12 +111,12 @@ namespace WindowsFormsApp2
             {
                 int first = r.Next(0, 2738);
                 int l = r.Next(0, 1000);
-                int m = r.Next(5);
-                int s = r.Next(5);
-                int en = r.Next(5);
-                int f = r.Next(5);
-                int h = r.Next(5);
-                int p = r.Next(5);
+                int m = r.Next(6);
+                int s = r.Next(6);
+                int en = r.Next(6);
+                int f = r.Next(6);
+                int h = r.Next(6);
+                int p = r.Next(6);
                 string mG = grades[m];
                 string sG = grades[s];
                 string enG = grades[en];
@@ -213,6 +220,11 @@ namespace WindowsFormsApp2
                 username.Text = gameInfo.username;
                 password.Text = gameInfo.password;
             }
+        }
+
+        private void clearNames_Click(object sender, EventArgs e)
+        {
+            players.Clear();
         }
     }
 }

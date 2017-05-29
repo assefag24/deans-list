@@ -55,7 +55,7 @@ namespace loginform
             }
             if (deansUsername.Text == "gamemaster" && deansPassword.Text == "endcurrentgame")
             {
-                this.Close();
+                this.Close();                
             }
             
         }
@@ -200,7 +200,7 @@ namespace loginform
         {
             loggedInPanel.Visible = false;
             loginPanel.Visible = true;
-            //this.Close();
+            this.Close();
         }
     }
 }

@@ -31,7 +31,6 @@
             this.newName = new System.Windows.Forms.Label();
             this.first = new System.Windows.Forms.TextBox();
             this.addName = new System.Windows.Forms.Button();
-            this.addedNames = new System.Windows.Forms.ListBox();
             this.start = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.last = new System.Windows.Forms.TextBox();
@@ -42,6 +41,10 @@
             this.usernameLabel = new System.Windows.Forms.Label();
             this.saveUser = new System.Windows.Forms.Button();
             this.passwordInfo = new System.Windows.Forms.Label();
+            this.playerTable = new System.Windows.Forms.DataGridView();
+            this.clearNames = new System.Windows.Forms.Button();
+            this.startFail = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.playerTable)).BeginInit();
             this.SuspendLayout();
             // 
             // newName
@@ -71,18 +74,9 @@
             this.addName.UseVisualStyleBackColor = true;
             this.addName.Click += new System.EventHandler(this.addName_Click);
             // 
-            // addedNames
-            // 
-            this.addedNames.FormattingEnabled = true;
-            this.addedNames.ItemHeight = 16;
-            this.addedNames.Location = new System.Drawing.Point(15, 264);
-            this.addedNames.Name = "addedNames";
-            this.addedNames.Size = new System.Drawing.Size(618, 148);
-            this.addedNames.TabIndex = 4;
-            // 
             // start
             // 
-            this.start.Location = new System.Drawing.Point(195, 440);
+            this.start.Location = new System.Drawing.Point(32, 440);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(256, 39);
             this.start.TabIndex = 5;
@@ -169,11 +163,46 @@
             this.passwordInfo.Size = new System.Drawing.Size(0, 25);
             this.passwordInfo.TabIndex = 16;
             // 
+            // playerTable
+            // 
+            this.playerTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.playerTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.playerTable.Location = new System.Drawing.Point(32, 249);
+            this.playerTable.Name = "playerTable";
+            this.playerTable.ReadOnly = true;
+            this.playerTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.playerTable.RowTemplate.Height = 24;
+            this.playerTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.playerTable.Size = new System.Drawing.Size(882, 185);
+            this.playerTable.TabIndex = 17;
+            // 
+            // clearNames
+            // 
+            this.clearNames.Location = new System.Drawing.Point(686, 158);
+            this.clearNames.Name = "clearNames";
+            this.clearNames.Size = new System.Drawing.Size(209, 39);
+            this.clearNames.TabIndex = 18;
+            this.clearNames.Text = "clear names";
+            this.clearNames.UseVisualStyleBackColor = true;
+            this.clearNames.Click += new System.EventHandler(this.clearNames_Click);
+            // 
+            // startFail
+            // 
+            this.startFail.AutoSize = true;
+            this.startFail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startFail.Location = new System.Drawing.Point(318, 448);
+            this.startFail.Name = "startFail";
+            this.startFail.Size = new System.Drawing.Size(0, 25);
+            this.startFail.TabIndex = 19;
+            // 
             // takeNames
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 511);
+            this.ClientSize = new System.Drawing.Size(926, 511);
+            this.Controls.Add(this.startFail);
+            this.Controls.Add(this.clearNames);
+            this.Controls.Add(this.playerTable);
             this.Controls.Add(this.passwordInfo);
             this.Controls.Add(this.saveUser);
             this.Controls.Add(this.password);
@@ -184,12 +213,12 @@
             this.Controls.Add(this.last);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.start);
-            this.Controls.Add(this.addedNames);
             this.Controls.Add(this.addName);
             this.Controls.Add(this.first);
             this.Controls.Add(this.newName);
             this.Name = "takeNames";
             this.Text = "takeNames";
+            ((System.ComponentModel.ISupportInitialize)(this.playerTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,7 +229,6 @@
         private System.Windows.Forms.Label newName;
         private System.Windows.Forms.TextBox first;
         private System.Windows.Forms.Button addName;
-        private System.Windows.Forms.ListBox addedNames;
         private System.Windows.Forms.Button start;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox last;
@@ -211,5 +239,8 @@
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Button saveUser;
         private System.Windows.Forms.Label passwordInfo;
+        public System.Windows.Forms.DataGridView playerTable;
+        private System.Windows.Forms.Button clearNames;
+        private System.Windows.Forms.Label startFail;
     }
 }

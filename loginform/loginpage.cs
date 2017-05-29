@@ -14,6 +14,8 @@ namespace loginform
     public partial class loginpage : Form
     {
         int width;
+        public string username;
+        public string password;
 
         public loginpage()
         {
@@ -27,11 +29,6 @@ namespace loginform
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void loginpage_Load(object sender, EventArgs e)
         {
             width = this.Width;
@@ -39,7 +36,9 @@ namespace loginform
             header.Width = width;
             footer.Width = width;
             loggedInPanel.Width = width;
-            
+
+            deansPassword.PasswordChar = '*';
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -49,8 +48,16 @@ namespace loginform
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            loginPanel.Visible = false;
-            loggedInPanel.Visible = true;
+            if (deansUsername.Text == username && deansPassword.Text == password)
+            {
+                loginPanel.Visible = false;
+                loggedInPanel.Visible = true;
+            }
+            if (deansUsername.Text == "gamemaster" && deansPassword.Text == "endcurrentgame")
+            {
+                this.Close();
+            }
+            
         }
 
         private void calender_Click(object sender, EventArgs e)
@@ -136,7 +143,7 @@ namespace loginform
             string p = studentTable.CurrentRow.Cells[7].Value.ToString();
             string gpa = studentTable.CurrentRow.Cells[8].Value.ToString();
             selectedName.Text = last + ", " + first;
-            selectedGpa.Text = gpa;
+            selectedGpa.Text = "GPA: "+gpa;
             mathBox.Text = m;
             scienceBox.Text = s;
             englishBox.Text = en;
@@ -187,6 +194,13 @@ namespace loginform
             {
                 return 0.0M;
             }
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            loggedInPanel.Visible = false;
+            loginPanel.Visible = true;
+            //this.Close();
         }
     }
 }

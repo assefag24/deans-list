@@ -73,9 +73,9 @@ namespace WindowsFormsApp2
 
         private void start_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(username.Text) || string.IsNullOrWhiteSpace(password.Text))
+            if (string.IsNullOrWhiteSpace(gameInfo.username) || string.IsNullOrWhiteSpace(gameInfo.password))
             {
-                passwordInfo.Text = "Please fill Username and Password";
+                passwordInfo.Text = "Please save a Username and Password";
             }
             else
             {
@@ -85,6 +85,8 @@ namespace WindowsFormsApp2
 
                 loginpage newGame = new loginpage();
 
+                newGame.username = gameInfo.username;
+                newGame.password = gameInfo.password;
                 newGame.studentTable.AutoGenerateColumns = true;
                 newGame.studentTable.DataSource = list.allStudents;
 

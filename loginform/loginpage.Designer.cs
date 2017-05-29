@@ -52,19 +52,27 @@
             this.calenderPanel = new System.Windows.Forms.Panel();
             this.classesPanel = new System.Windows.Forms.Panel();
             this.studentsPanel = new System.Windows.Forms.Panel();
+            this.studentTable = new System.Windows.Forms.DataGridView();
             this.students = new System.Windows.Forms.Label();
             this.Classes = new System.Windows.Forms.Label();
             this.calender = new System.Windows.Forms.Label();
-            this.gpa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.psychGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.historyGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.frenchGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.englishGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scienceGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mathGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentTable = new System.Windows.Forms.DataGridView();
+            this.editLabel = new System.Windows.Forms.Label();
+            this.editPanel = new System.Windows.Forms.Panel();
+            this.saveButton = new System.Windows.Forms.Label();
+            this.selectedName = new System.Windows.Forms.Label();
+            this.selectedGpa = new System.Windows.Forms.Label();
+            this.mathLabel = new System.Windows.Forms.Label();
+            this.scienceLabel = new System.Windows.Forms.Label();
+            this.englishLabel = new System.Windows.Forms.Label();
+            this.languageLabel = new System.Windows.Forms.Label();
+            this.historyLabel = new System.Windows.Forms.Label();
+            this.psychLabel = new System.Windows.Forms.Label();
+            this.mathBox = new System.Windows.Forms.TextBox();
+            this.scienceBox = new System.Windows.Forms.TextBox();
+            this.englishBox = new System.Windows.Forms.TextBox();
+            this.foreignBox = new System.Windows.Forms.TextBox();
+            this.historyBox = new System.Windows.Forms.TextBox();
+            this.psychBox = new System.Windows.Forms.TextBox();
             this.header.SuspendLayout();
             this.loginPanel.SuspendLayout();
             this.footer.SuspendLayout();
@@ -73,6 +81,7 @@
             this.classesPanel.SuspendLayout();
             this.studentsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentTable)).BeginInit();
+            this.editPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // header
@@ -194,7 +203,7 @@
             this.footer.Controls.Add(this.button3);
             this.footer.Controls.Add(this.label3);
             this.footer.Controls.Add(this.label2);
-            this.footer.Location = new System.Drawing.Point(1, 700);
+            this.footer.Location = new System.Drawing.Point(1, 761);
             this.footer.Name = "footer";
             this.footer.Size = new System.Drawing.Size(1783, 114);
             this.footer.TabIndex = 1;
@@ -330,9 +339,9 @@
             this.calenderPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.calenderPanel.Controls.Add(this.classesPanel);
-            this.calenderPanel.Location = new System.Drawing.Point(186, 185);
+            this.calenderPanel.Location = new System.Drawing.Point(186, 118);
             this.calenderPanel.Name = "calenderPanel";
-            this.calenderPanel.Size = new System.Drawing.Size(1328, 512);
+            this.calenderPanel.Size = new System.Drawing.Size(1328, 575);
             this.calenderPanel.TabIndex = 8;
             // 
             // classesPanel
@@ -342,7 +351,7 @@
             this.classesPanel.Controls.Add(this.studentsPanel);
             this.classesPanel.Location = new System.Drawing.Point(3, 0);
             this.classesPanel.Name = "classesPanel";
-            this.classesPanel.Size = new System.Drawing.Size(1305, 509);
+            this.classesPanel.Size = new System.Drawing.Size(1305, 572);
             this.classesPanel.TabIndex = 0;
             this.classesPanel.Visible = false;
             // 
@@ -350,12 +359,28 @@
             // 
             this.studentsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.studentsPanel.Controls.Add(this.editPanel);
+            this.studentsPanel.Controls.Add(this.editLabel);
             this.studentsPanel.Controls.Add(this.studentTable);
             this.studentsPanel.Location = new System.Drawing.Point(3, 3);
             this.studentsPanel.Name = "studentsPanel";
-            this.studentsPanel.Size = new System.Drawing.Size(1299, 506);
+            this.studentsPanel.Size = new System.Drawing.Size(1299, 635);
             this.studentsPanel.TabIndex = 9;
             this.studentsPanel.Visible = false;
+            // 
+            // studentTable
+            // 
+            this.studentTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.studentTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.studentTable.Location = new System.Drawing.Point(3, 3);
+            this.studentTable.Name = "studentTable";
+            this.studentTable.ReadOnly = true;
+            this.studentTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.studentTable.RowTemplate.Height = 24;
+            this.studentTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.studentTable.Size = new System.Drawing.Size(1245, 379);
+            this.studentTable.TabIndex = 0;
+            this.studentTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentTable_CellContentClick);
             // 
             // students
             // 
@@ -364,7 +389,7 @@
             this.students.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.students.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.students.ForeColor = System.Drawing.Color.Black;
-            this.students.Location = new System.Drawing.Point(473, 129);
+            this.students.Location = new System.Drawing.Point(473, 62);
             this.students.Name = "students";
             this.students.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
             this.students.Size = new System.Drawing.Size(123, 45);
@@ -379,7 +404,7 @@
             this.Classes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Classes.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Classes.ForeColor = System.Drawing.Color.Black;
-            this.Classes.Location = new System.Drawing.Point(335, 129);
+            this.Classes.Location = new System.Drawing.Point(335, 62);
             this.Classes.Name = "Classes";
             this.Classes.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
             this.Classes.Size = new System.Drawing.Size(109, 45);
@@ -394,7 +419,7 @@
             this.calender.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.calender.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calender.ForeColor = System.Drawing.Color.White;
-            this.calender.Location = new System.Drawing.Point(188, 129);
+            this.calender.Location = new System.Drawing.Point(188, 62);
             this.calender.Name = "calender";
             this.calender.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
             this.calender.Size = new System.Drawing.Size(120, 45);
@@ -402,87 +427,191 @@
             this.calender.Text = "Calender";
             this.calender.Click += new System.EventHandler(this.calender_Click);
             // 
-            // gpa
+            // editLabel
             // 
-            this.gpa.HeaderText = "GPA";
-            this.gpa.Name = "gpa";
-            this.gpa.ReadOnly = true;
+            this.editLabel.AutoSize = true;
+            this.editLabel.BackColor = System.Drawing.Color.White;
+            this.editLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.editLabel.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editLabel.ForeColor = System.Drawing.Color.Black;
+            this.editLabel.Location = new System.Drawing.Point(3, 385);
+            this.editLabel.Name = "editLabel";
+            this.editLabel.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
+            this.editLabel.Size = new System.Drawing.Size(83, 45);
+            this.editLabel.TabIndex = 9;
+            this.editLabel.Text = "Edit";
+            this.editLabel.Click += new System.EventHandler(this.editLabel_Click);
             // 
-            // psychGrade
+            // editPanel
             // 
-            this.psychGrade.HeaderText = "Psychology";
-            this.psychGrade.Name = "psychGrade";
-            this.psychGrade.ReadOnly = true;
+            this.editPanel.Controls.Add(this.psychBox);
+            this.editPanel.Controls.Add(this.historyBox);
+            this.editPanel.Controls.Add(this.foreignBox);
+            this.editPanel.Controls.Add(this.englishBox);
+            this.editPanel.Controls.Add(this.scienceBox);
+            this.editPanel.Controls.Add(this.mathBox);
+            this.editPanel.Controls.Add(this.psychLabel);
+            this.editPanel.Controls.Add(this.historyLabel);
+            this.editPanel.Controls.Add(this.languageLabel);
+            this.editPanel.Controls.Add(this.englishLabel);
+            this.editPanel.Controls.Add(this.scienceLabel);
+            this.editPanel.Controls.Add(this.mathLabel);
+            this.editPanel.Controls.Add(this.selectedGpa);
+            this.editPanel.Controls.Add(this.selectedName);
+            this.editPanel.Controls.Add(this.saveButton);
+            this.editPanel.Location = new System.Drawing.Point(1, 385);
+            this.editPanel.Name = "editPanel";
+            this.editPanel.Size = new System.Drawing.Size(1247, 184);
+            this.editPanel.TabIndex = 10;
+            this.editPanel.Visible = false;
             // 
-            // historyGrade
+            // saveButton
             // 
-            this.historyGrade.HeaderText = "History";
-            this.historyGrade.Name = "historyGrade";
-            this.historyGrade.ReadOnly = true;
+            this.saveButton.AutoSize = true;
+            this.saveButton.BackColor = System.Drawing.Color.White;
+            this.saveButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.saveButton.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.ForeColor = System.Drawing.Color.Black;
+            this.saveButton.Location = new System.Drawing.Point(1082, 103);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
+            this.saveButton.Size = new System.Drawing.Size(89, 45);
+            this.saveButton.TabIndex = 9;
+            this.saveButton.Text = "Save";
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // frenchGrade
+            // selectedName
             // 
-            this.frenchGrade.HeaderText = "Foreign Language";
-            this.frenchGrade.Name = "frenchGrade";
-            this.frenchGrade.ReadOnly = true;
+            this.selectedName.AutoSize = true;
+            this.selectedName.Location = new System.Drawing.Point(93, 28);
+            this.selectedName.Name = "selectedName";
+            this.selectedName.Size = new System.Drawing.Size(46, 17);
+            this.selectedName.TabIndex = 10;
+            this.selectedName.Text = "label8";
             // 
-            // englishGrade
+            // selectedGpa
             // 
-            this.englishGrade.HeaderText = "English";
-            this.englishGrade.Name = "englishGrade";
-            this.englishGrade.ReadOnly = true;
+            this.selectedGpa.AutoSize = true;
+            this.selectedGpa.Location = new System.Drawing.Point(962, 27);
+            this.selectedGpa.Name = "selectedGpa";
+            this.selectedGpa.Size = new System.Drawing.Size(46, 17);
+            this.selectedGpa.TabIndex = 11;
+            this.selectedGpa.Text = "label9";
             // 
-            // scienceGrade
+            // mathLabel
             // 
-            this.scienceGrade.HeaderText = "Science";
-            this.scienceGrade.Name = "scienceGrade";
-            this.scienceGrade.ReadOnly = true;
+            this.mathLabel.AutoSize = true;
+            this.mathLabel.Location = new System.Drawing.Point(126, 82);
+            this.mathLabel.Name = "mathLabel";
+            this.mathLabel.Size = new System.Drawing.Size(39, 17);
+            this.mathLabel.TabIndex = 12;
+            this.mathLabel.Text = "Math";
             // 
-            // mathGrade
+            // scienceLabel
             // 
-            this.mathGrade.HeaderText = "Math";
-            this.mathGrade.Name = "mathGrade";
-            this.mathGrade.ReadOnly = true;
+            this.scienceLabel.AutoSize = true;
+            this.scienceLabel.Location = new System.Drawing.Point(260, 82);
+            this.scienceLabel.Name = "scienceLabel";
+            this.scienceLabel.Size = new System.Drawing.Size(58, 17);
+            this.scienceLabel.TabIndex = 13;
+            this.scienceLabel.Text = "Science";
             // 
-            // firstName
+            // englishLabel
             // 
-            this.firstName.HeaderText = "First Name";
-            this.firstName.Name = "firstName";
-            this.firstName.ReadOnly = true;
+            this.englishLabel.AutoSize = true;
+            this.englishLabel.Location = new System.Drawing.Point(406, 82);
+            this.englishLabel.Name = "englishLabel";
+            this.englishLabel.Size = new System.Drawing.Size(54, 17);
+            this.englishLabel.TabIndex = 14;
+            this.englishLabel.Text = "English";
             // 
-            // lastName
+            // languageLabel
             // 
-            this.lastName.HeaderText = "Last Name";
-            this.lastName.Name = "lastName";
-            this.lastName.ReadOnly = true;
+            this.languageLabel.AutoSize = true;
+            this.languageLabel.Location = new System.Drawing.Point(516, 82);
+            this.languageLabel.Name = "languageLabel";
+            this.languageLabel.Size = new System.Drawing.Size(124, 17);
+            this.languageLabel.TabIndex = 15;
+            this.languageLabel.Text = "Foreign Language";
             // 
-            // studentTable
+            // historyLabel
             // 
-            this.studentTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.studentTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.studentTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.lastName,
-            this.firstName,
-            this.mathGrade,
-            this.scienceGrade,
-            this.englishGrade,
-            this.frenchGrade,
-            this.historyGrade,
-            this.psychGrade,
-            this.gpa});
-            this.studentTable.Location = new System.Drawing.Point(3, 3);
-            this.studentTable.Name = "studentTable";
-            this.studentTable.ReadOnly = true;
-            this.studentTable.RowTemplate.Height = 24;
-            this.studentTable.Size = new System.Drawing.Size(1245, 379);
-            this.studentTable.TabIndex = 0;
+            this.historyLabel.AutoSize = true;
+            this.historyLabel.Location = new System.Drawing.Point(691, 82);
+            this.historyLabel.Name = "historyLabel";
+            this.historyLabel.Size = new System.Drawing.Size(52, 17);
+            this.historyLabel.TabIndex = 16;
+            this.historyLabel.Text = "History";
+            // 
+            // psychLabel
+            // 
+            this.psychLabel.AutoSize = true;
+            this.psychLabel.Location = new System.Drawing.Point(820, 82);
+            this.psychLabel.Name = "psychLabel";
+            this.psychLabel.Size = new System.Drawing.Size(80, 17);
+            this.psychLabel.TabIndex = 17;
+            this.psychLabel.Text = "Psychology";
+            // 
+            // mathBox
+            // 
+            this.mathBox.Location = new System.Drawing.Point(96, 117);
+            this.mathBox.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
+            this.mathBox.Name = "mathBox";
+            this.mathBox.Size = new System.Drawing.Size(100, 22);
+            this.mathBox.TabIndex = 18;
+            this.mathBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // scienceBox
+            // 
+            this.scienceBox.Location = new System.Drawing.Point(239, 117);
+            this.scienceBox.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
+            this.scienceBox.Name = "scienceBox";
+            this.scienceBox.Size = new System.Drawing.Size(100, 22);
+            this.scienceBox.TabIndex = 19;
+            this.scienceBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // englishBox
+            // 
+            this.englishBox.Location = new System.Drawing.Point(382, 117);
+            this.englishBox.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
+            this.englishBox.Name = "englishBox";
+            this.englishBox.Size = new System.Drawing.Size(100, 22);
+            this.englishBox.TabIndex = 20;
+            this.englishBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // foreignBox
+            // 
+            this.foreignBox.Location = new System.Drawing.Point(525, 117);
+            this.foreignBox.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
+            this.foreignBox.Name = "foreignBox";
+            this.foreignBox.Size = new System.Drawing.Size(100, 22);
+            this.foreignBox.TabIndex = 21;
+            this.foreignBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // historyBox
+            // 
+            this.historyBox.Location = new System.Drawing.Point(668, 117);
+            this.historyBox.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
+            this.historyBox.Name = "historyBox";
+            this.historyBox.Size = new System.Drawing.Size(100, 22);
+            this.historyBox.TabIndex = 22;
+            this.historyBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // psychBox
+            // 
+            this.psychBox.Location = new System.Drawing.Point(811, 117);
+            this.psychBox.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
+            this.psychBox.Name = "psychBox";
+            this.psychBox.Size = new System.Drawing.Size(100, 22);
+            this.psychBox.TabIndex = 23;
+            this.psychBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // loginpage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(1783, 813);
+            this.ClientSize = new System.Drawing.Size(1783, 874);
             this.Controls.Add(this.loginPanel);
             this.Controls.Add(this.footer);
             this.Controls.Add(this.header);
@@ -501,7 +630,10 @@
             this.calenderPanel.ResumeLayout(false);
             this.classesPanel.ResumeLayout(false);
             this.studentsPanel.ResumeLayout(false);
+            this.studentsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentTable)).EndInit();
+            this.editPanel.ResumeLayout(false);
+            this.editPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -536,14 +668,22 @@
         private System.Windows.Forms.Panel classesPanel;
         private System.Windows.Forms.Panel studentsPanel;
         public System.Windows.Forms.DataGridView studentTable;
-        public System.Windows.Forms.DataGridViewTextBoxColumn lastName;
-        public System.Windows.Forms.DataGridViewTextBoxColumn firstName;
-        public System.Windows.Forms.DataGridViewTextBoxColumn mathGrade;
-        public System.Windows.Forms.DataGridViewTextBoxColumn scienceGrade;
-        public System.Windows.Forms.DataGridViewTextBoxColumn englishGrade;
-        public System.Windows.Forms.DataGridViewTextBoxColumn frenchGrade;
-        public System.Windows.Forms.DataGridViewTextBoxColumn historyGrade;
-        public System.Windows.Forms.DataGridViewTextBoxColumn psychGrade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gpa;
+        private System.Windows.Forms.Panel editPanel;
+        private System.Windows.Forms.Label editLabel;
+        private System.Windows.Forms.TextBox psychBox;
+        private System.Windows.Forms.TextBox historyBox;
+        private System.Windows.Forms.TextBox foreignBox;
+        private System.Windows.Forms.TextBox englishBox;
+        private System.Windows.Forms.TextBox scienceBox;
+        private System.Windows.Forms.TextBox mathBox;
+        private System.Windows.Forms.Label psychLabel;
+        private System.Windows.Forms.Label historyLabel;
+        private System.Windows.Forms.Label languageLabel;
+        private System.Windows.Forms.Label englishLabel;
+        private System.Windows.Forms.Label scienceLabel;
+        private System.Windows.Forms.Label mathLabel;
+        private System.Windows.Forms.Label selectedGpa;
+        private System.Windows.Forms.Label selectedName;
+        private System.Windows.Forms.Label saveButton;
     }
 }

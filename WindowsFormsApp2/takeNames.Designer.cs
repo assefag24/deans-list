@@ -40,6 +40,8 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.username = new System.Windows.Forms.TextBox();
             this.usernameLabel = new System.Windows.Forms.Label();
+            this.saveUser = new System.Windows.Forms.Button();
+            this.passwordInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // newName
@@ -61,9 +63,9 @@
             // 
             // addName
             // 
-            this.addName.Location = new System.Drawing.Point(476, 157);
+            this.addName.Location = new System.Drawing.Point(424, 158);
             this.addName.Name = "addName";
-            this.addName.Size = new System.Drawing.Size(110, 39);
+            this.addName.Size = new System.Drawing.Size(209, 39);
             this.addName.TabIndex = 3;
             this.addName.Text = "add name";
             this.addName.UseVisualStyleBackColor = true;
@@ -73,14 +75,14 @@
             // 
             this.addedNames.FormattingEnabled = true;
             this.addedNames.ItemHeight = 16;
-            this.addedNames.Location = new System.Drawing.Point(15, 231);
+            this.addedNames.Location = new System.Drawing.Point(15, 264);
             this.addedNames.Name = "addedNames";
-            this.addedNames.Size = new System.Drawing.Size(764, 148);
+            this.addedNames.Size = new System.Drawing.Size(618, 148);
             this.addedNames.TabIndex = 4;
             // 
             // start
             // 
-            this.start.Location = new System.Drawing.Point(12, 397);
+            this.start.Location = new System.Drawing.Point(195, 440);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(256, 39);
             this.start.TabIndex = 5;
@@ -109,7 +111,7 @@
             // 
             this.nameError.AutoSize = true;
             this.nameError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameError.Location = new System.Drawing.Point(602, 24);
+            this.nameError.Location = new System.Drawing.Point(146, 221);
             this.nameError.Name = "nameError";
             this.nameError.Size = new System.Drawing.Size(0, 25);
             this.nameError.TabIndex = 9;
@@ -148,11 +150,32 @@
             this.usernameLabel.TabIndex = 11;
             this.usernameLabel.Text = "Username";
             // 
+            // saveUser
+            // 
+            this.saveUser.Location = new System.Drawing.Point(424, 39);
+            this.saveUser.Name = "saveUser";
+            this.saveUser.Size = new System.Drawing.Size(209, 39);
+            this.saveUser.TabIndex = 15;
+            this.saveUser.Text = "Save Username/Password";
+            this.saveUser.UseVisualStyleBackColor = true;
+            this.saveUser.Click += new System.EventHandler(this.saveUser_Click);
+            // 
+            // passwordInfo
+            // 
+            this.passwordInfo.AutoSize = true;
+            this.passwordInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordInfo.Location = new System.Drawing.Point(146, 102);
+            this.passwordInfo.Name = "passwordInfo";
+            this.passwordInfo.Size = new System.Drawing.Size(0, 25);
+            this.passwordInfo.TabIndex = 16;
+            // 
             // takeNames
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 471);
+            this.ClientSize = new System.Drawing.Size(643, 511);
+            this.Controls.Add(this.passwordInfo);
+            this.Controls.Add(this.saveUser);
             this.Controls.Add(this.password);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.username);
@@ -186,5 +209,7 @@
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox username;
         private System.Windows.Forms.Label usernameLabel;
+        private System.Windows.Forms.Button saveUser;
+        private System.Windows.Forms.Label passwordInfo;
     }
 }

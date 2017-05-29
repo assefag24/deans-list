@@ -52,19 +52,21 @@
             this.calenderPanel = new System.Windows.Forms.Panel();
             this.classesPanel = new System.Windows.Forms.Panel();
             this.studentsPanel = new System.Windows.Forms.Panel();
+            this.studentTable = new System.Windows.Forms.DataGridView();
+            this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mathGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scienceGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.englishGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.frenchGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.historyGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.psychGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gpa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.students = new System.Windows.Forms.Label();
             this.Classes = new System.Windows.Forms.Label();
             this.calender = new System.Windows.Forms.Label();
-            this.gpa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.psychGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.historyGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.frenchGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.englishGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scienceGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mathGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentTable = new System.Windows.Forms.DataGridView();
+            this.btnsearch = new System.Windows.Forms.Button();
+            this.txtsearch = new System.Windows.Forms.TextBox();
             this.header.SuspendLayout();
             this.loginPanel.SuspendLayout();
             this.footer.SuspendLayout();
@@ -116,7 +118,7 @@
             this.loginPanel.Controls.Add(this.label7);
             this.loginPanel.Controls.Add(this.label6);
             this.loginPanel.Controls.Add(this.label5);
-            this.loginPanel.Location = new System.Drawing.Point(1521, 260);
+            this.loginPanel.Location = new System.Drawing.Point(1532, 312);
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(382, 363);
             this.loginPanel.TabIndex = 2;
@@ -194,9 +196,9 @@
             this.footer.Controls.Add(this.button3);
             this.footer.Controls.Add(this.label3);
             this.footer.Controls.Add(this.label2);
-            this.footer.Location = new System.Drawing.Point(1, 700);
+            this.footer.Location = new System.Drawing.Point(1, 805);
             this.footer.Name = "footer";
-            this.footer.Size = new System.Drawing.Size(1783, 114);
+            this.footer.Size = new System.Drawing.Size(1783, 112);
             this.footer.TabIndex = 1;
             // 
             // button7
@@ -284,7 +286,7 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(221, 53);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(179, 19);
+            this.button3.Size = new System.Drawing.Size(179, 17);
             this.button3.TabIndex = 2;
             this.button3.Text = "BU Home";
             this.button3.UseCompatibleTextRendering = true;
@@ -350,12 +352,89 @@
             // 
             this.studentsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.studentsPanel.Controls.Add(this.btnsearch);
+            this.studentsPanel.Controls.Add(this.txtsearch);
             this.studentsPanel.Controls.Add(this.studentTable);
-            this.studentsPanel.Location = new System.Drawing.Point(3, 3);
+            this.studentsPanel.Location = new System.Drawing.Point(0, 6);
             this.studentsPanel.Name = "studentsPanel";
             this.studentsPanel.Size = new System.Drawing.Size(1299, 506);
             this.studentsPanel.TabIndex = 9;
             this.studentsPanel.Visible = false;
+            // 
+            // studentTable
+            // 
+            this.studentTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.studentTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.studentTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.lastName,
+            this.firstName,
+            this.mathGrade,
+            this.scienceGrade,
+            this.englishGrade,
+            this.frenchGrade,
+            this.historyGrade,
+            this.psychGrade,
+            this.gpa});
+            this.studentTable.Location = new System.Drawing.Point(3, 3);
+            this.studentTable.Name = "studentTable";
+            this.studentTable.ReadOnly = true;
+            this.studentTable.RowTemplate.Height = 24;
+            this.studentTable.Size = new System.Drawing.Size(1245, 379);
+            this.studentTable.TabIndex = 0;
+            // 
+            // lastName
+            // 
+            this.lastName.HeaderText = "Last Name";
+            this.lastName.Name = "lastName";
+            this.lastName.ReadOnly = true;
+            // 
+            // firstName
+            // 
+            this.firstName.HeaderText = "First Name";
+            this.firstName.Name = "firstName";
+            this.firstName.ReadOnly = true;
+            // 
+            // mathGrade
+            // 
+            this.mathGrade.HeaderText = "Math";
+            this.mathGrade.Name = "mathGrade";
+            this.mathGrade.ReadOnly = true;
+            // 
+            // scienceGrade
+            // 
+            this.scienceGrade.HeaderText = "Science";
+            this.scienceGrade.Name = "scienceGrade";
+            this.scienceGrade.ReadOnly = true;
+            // 
+            // englishGrade
+            // 
+            this.englishGrade.HeaderText = "English";
+            this.englishGrade.Name = "englishGrade";
+            this.englishGrade.ReadOnly = true;
+            // 
+            // frenchGrade
+            // 
+            this.frenchGrade.HeaderText = "Foreign Language";
+            this.frenchGrade.Name = "frenchGrade";
+            this.frenchGrade.ReadOnly = true;
+            // 
+            // historyGrade
+            // 
+            this.historyGrade.HeaderText = "History";
+            this.historyGrade.Name = "historyGrade";
+            this.historyGrade.ReadOnly = true;
+            // 
+            // psychGrade
+            // 
+            this.psychGrade.HeaderText = "Psychology";
+            this.psychGrade.Name = "psychGrade";
+            this.psychGrade.ReadOnly = true;
+            // 
+            // gpa
+            // 
+            this.gpa.HeaderText = "GPA";
+            this.gpa.Name = "gpa";
+            this.gpa.ReadOnly = true;
             // 
             // students
             // 
@@ -402,87 +481,31 @@
             this.calender.Text = "Calender";
             this.calender.Click += new System.EventHandler(this.calender_Click);
             // 
-            // gpa
+            // btnsearch
             // 
-            this.gpa.HeaderText = "GPA";
-            this.gpa.Name = "gpa";
-            this.gpa.ReadOnly = true;
+            this.btnsearch.Font = new System.Drawing.Font("Lucida Calligraphy", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsearch.Location = new System.Drawing.Point(1148, 394);
+            this.btnsearch.Name = "btnsearch";
+            this.btnsearch.Size = new System.Drawing.Size(100, 33);
+            this.btnsearch.TabIndex = 9;
+            this.btnsearch.Text = "Search";
+            this.btnsearch.UseVisualStyleBackColor = true;
+            this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
             // 
-            // psychGrade
+            // txtsearch
             // 
-            this.psychGrade.HeaderText = "Psychology";
-            this.psychGrade.Name = "psychGrade";
-            this.psychGrade.ReadOnly = true;
-            // 
-            // historyGrade
-            // 
-            this.historyGrade.HeaderText = "History";
-            this.historyGrade.Name = "historyGrade";
-            this.historyGrade.ReadOnly = true;
-            // 
-            // frenchGrade
-            // 
-            this.frenchGrade.HeaderText = "Foreign Language";
-            this.frenchGrade.Name = "frenchGrade";
-            this.frenchGrade.ReadOnly = true;
-            // 
-            // englishGrade
-            // 
-            this.englishGrade.HeaderText = "English";
-            this.englishGrade.Name = "englishGrade";
-            this.englishGrade.ReadOnly = true;
-            // 
-            // scienceGrade
-            // 
-            this.scienceGrade.HeaderText = "Science";
-            this.scienceGrade.Name = "scienceGrade";
-            this.scienceGrade.ReadOnly = true;
-            // 
-            // mathGrade
-            // 
-            this.mathGrade.HeaderText = "Math";
-            this.mathGrade.Name = "mathGrade";
-            this.mathGrade.ReadOnly = true;
-            // 
-            // firstName
-            // 
-            this.firstName.HeaderText = "First Name";
-            this.firstName.Name = "firstName";
-            this.firstName.ReadOnly = true;
-            // 
-            // lastName
-            // 
-            this.lastName.HeaderText = "Last Name";
-            this.lastName.Name = "lastName";
-            this.lastName.ReadOnly = true;
-            // 
-            // studentTable
-            // 
-            this.studentTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.studentTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.studentTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.lastName,
-            this.firstName,
-            this.mathGrade,
-            this.scienceGrade,
-            this.englishGrade,
-            this.frenchGrade,
-            this.historyGrade,
-            this.psychGrade,
-            this.gpa});
-            this.studentTable.Location = new System.Drawing.Point(3, 3);
-            this.studentTable.Name = "studentTable";
-            this.studentTable.ReadOnly = true;
-            this.studentTable.RowTemplate.Height = 24;
-            this.studentTable.Size = new System.Drawing.Size(1245, 379);
-            this.studentTable.TabIndex = 0;
+            this.txtsearch.Location = new System.Drawing.Point(880, 394);
+            this.txtsearch.Multiline = true;
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(251, 28);
+            this.txtsearch.TabIndex = 10;
             // 
             // loginpage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(1783, 813);
+            this.ClientSize = new System.Drawing.Size(1783, 918);
             this.Controls.Add(this.loginPanel);
             this.Controls.Add(this.footer);
             this.Controls.Add(this.header);
@@ -501,6 +524,7 @@
             this.calenderPanel.ResumeLayout(false);
             this.classesPanel.ResumeLayout(false);
             this.studentsPanel.ResumeLayout(false);
+            this.studentsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentTable)).EndInit();
             this.ResumeLayout(false);
 
@@ -545,5 +569,7 @@
         public System.Windows.Forms.DataGridViewTextBoxColumn historyGrade;
         public System.Windows.Forms.DataGridViewTextBoxColumn psychGrade;
         private System.Windows.Forms.DataGridViewTextBoxColumn gpa;
+        private System.Windows.Forms.Button btnsearch;
+        private System.Windows.Forms.TextBox txtsearch;
     }
 }

@@ -46,3 +46,18 @@ C:\Users\Dylan\Desktop\deans-list\deans-list\WindowsFormsApp2\obj\Debug\WindowsF
 C:\Users\Dylan\Desktop\deans-list\deans-list\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.Cache
 C:\Users\Dylan\Desktop\deans-list\deans-list\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\Users\Dylan\Desktop\deans-list\deans-list\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\Shannie\Desktop\student login\deans-list\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\Shannie\Desktop\student login\deans-list\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\Shannie\Desktop\student login\deans-list\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\Shannie\Desktop\student login\deans-list\WindowsFormsApp2\bin\Debug\ClassLibrary1.dll
+C:\Users\Shannie\Desktop\student login\deans-list\WindowsFormsApp2\bin\Debug\loginform.exe
+C:\Users\Shannie\Desktop\student login\deans-list\WindowsFormsApp2\bin\Debug\ClassLibrary1.pdb
+C:\Users\Shannie\Desktop\student login\deans-list\WindowsFormsApp2\bin\Debug\loginform.pdb
+C:\Users\Shannie\Desktop\student login\deans-list\WindowsFormsApp2\bin\Debug\loginform.exe.config
+C:\Users\Shannie\Desktop\student login\deans-list\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csprojResolveAssemblyReference.cache
+C:\Users\Shannie\Desktop\student login\deans-list\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.displayNames.resources
+C:\Users\Shannie\Desktop\student login\deans-list\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\Shannie\Desktop\student login\deans-list\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.takeNames.resources
+C:\Users\Shannie\Desktop\student login\deans-list\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.Cache
+C:\Users\Shannie\Desktop\student login\deans-list\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\Shannie\Desktop\student login\deans-list\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb

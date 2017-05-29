@@ -96,5 +96,10 @@ namespace loginform
             classesPanel.Visible = true;
             studentsPanel.Visible = true;
         }
+
+        private void btnsearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

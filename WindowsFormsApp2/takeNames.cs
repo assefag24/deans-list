@@ -18,7 +18,7 @@ namespace WindowsFormsApp2
         BindingSource printNames = new BindingSource();
         BindingSource printList = new BindingSource();
         List<Student> players = new List<Student>();
-        private ListOfNames list = new ListOfNames();
+        private Game list = new Game();
         private Student student = new Student();
         Student studentSelected;
         
@@ -76,14 +76,14 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void start_Click(object sender, EventArgs e)
+        protected void start_Click(object sender, EventArgs e)
         {
             
-            list.allStudents.AddRange(players);
+            list.allStudent.AddRange(players);
             dummyData();
-            list.allStudents.Sort((x, y) => string.Compare(x.lastName, y.lastName));
+            list.allStudent.Sort((x, y) => string.Compare(x.lastName, y.lastName));
 
-            printList.DataSource = list.allStudents;
+            printList.DataSource = list.allStudent;
             displayListOfNames.DataSource = printList;
 
             displayListOfNames.DisplayMember = "display";
@@ -120,6 +120,10 @@ namespace WindowsFormsApp2
             decimal newH = gradeReturn(historyGrade.Text);
             decimal newP = gradeReturn(psychologyGrade.Text);
             decimal newGpa = (newM + newS + newEn + newF + newH + newP) / 6;
+            double g;
+
+            
+           
 
 
             studentSelected.MathClass = newM;
@@ -157,7 +161,7 @@ namespace WindowsFormsApp2
 
 
 
-                list.allStudents.Add(new Student { firstName = firstNames[first], lastName = lastNames[l], MathClass = m / 10, Science = s / 10, French = f / 10, History = h / 10, English = en / 10, Psychology = p / 10, GPA = g });
+                list.allStudent.Add(new Student { firstName = firstNames[first], lastName = lastNames[l], MathClass = m / 10, Science = s / 10, French = f / 10, History = h / 10, English = en / 10, Psychology = p / 10, GPA = g });
             }
         }
 

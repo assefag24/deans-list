@@ -3,3 +3,8 @@ c:\users\dylan\documents\visual studio 2017\Projects\WindowsFormsApp2\ClassLibra
 c:\users\dylan\documents\visual studio 2017\Projects\WindowsFormsApp2\ClassLibrary1\obj\Debug\ClassLibrary1.csprojResolveAssemblyReference.cache
 c:\users\dylan\documents\visual studio 2017\Projects\WindowsFormsApp2\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 c:\users\dylan\documents\visual studio 2017\Projects\WindowsFormsApp2\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\ClassLibrary1\obj\Debug\ClassLibrary1.csprojResolveAssemblyReference.cache
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

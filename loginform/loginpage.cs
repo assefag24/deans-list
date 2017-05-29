@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibrary1;
 
 namespace loginform
 {
@@ -20,7 +21,7 @@ namespace loginform
             WindowState = FormWindowState.Maximized;
             header.Left = 0;
             footer.Left = 0;
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,12 +39,13 @@ namespace loginform
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
+
     }
 }

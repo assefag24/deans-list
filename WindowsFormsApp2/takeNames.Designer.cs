@@ -111,7 +111,7 @@
             // 
             this.displayListOfNames.FormattingEnabled = true;
             this.displayListOfNames.ItemHeight = 16;
-            this.displayListOfNames.Location = new System.Drawing.Point(20, 101);
+            this.displayListOfNames.Location = new System.Drawing.Point(32, 100);
             this.displayListOfNames.Name = "displayListOfNames";
             this.displayListOfNames.Size = new System.Drawing.Size(764, 148);
             this.displayListOfNames.TabIndex = 0;
@@ -137,8 +137,7 @@
             // 
             this.panel1.Controls.Add(this.change);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.displayListOfNames);
-            this.panel1.Location = new System.Drawing.Point(14, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 301);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(808, 305);
             this.panel1.TabIndex = 8;
@@ -180,7 +179,7 @@
             this.panel2.Controls.Add(this.historyGrade);
             this.panel2.Controls.Add(this.psychologyGrade);
             this.panel2.Controls.Add(this.mathGrade);
-            this.panel2.Location = new System.Drawing.Point(14, 13);
+            this.panel2.Location = new System.Drawing.Point(32, 457);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(805, 312);
             this.panel2.TabIndex = 3;
@@ -341,9 +340,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 471);
+            this.ClientSize = new System.Drawing.Size(1219, 802);
             this.Controls.Add(this.startWebsite);
             this.Controls.Add(this.nameError);
+            this.Controls.Add(this.displayListOfNames);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.last);

@@ -7,3 +7,5 @@ C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\loginform\bin\Debug\l
 C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\loginform\bin\Debug\loginform.pdb
 C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\loginform\obj\Debug\loginform.exe
 C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\loginform\obj\Debug\loginform.pdb
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\loginform\bin\Debug\ClassLibrary1.dll
+C:\Users\Shannie\Desktop\student login\escaperoomDeanslist\loginform\bin\Debug\ClassLibrary1.pdb

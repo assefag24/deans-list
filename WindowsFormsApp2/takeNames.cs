@@ -213,6 +213,7 @@ namespace WindowsFormsApp2
             else
             {
                 passwordInfo.Text = "Username and Password saved";
+                startFail.Text = "";
 
                 gameInfo.username = username.Text;
                 gameInfo.password = password.Text;

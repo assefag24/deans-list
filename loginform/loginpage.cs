@@ -25,8 +25,14 @@ namespace loginform
             header.Left = 0;
             footer.Left = 0;
             loggedInPanel.Left = 0;
-            
-            
+
+            AcceptButton = loginButton;
+
+            loginPanel.Location = new Point(
+                 this.ClientSize.Width / 2 - loginPanel.Size.Width / 2,
+                 this.ClientSize.Height / 2 - loginPanel.Size.Height / 2);
+            loginPanel.Anchor = AnchorStyles.None;
+
         }
 
         private void loginpage_Load(object sender, EventArgs e)
@@ -43,21 +49,27 @@ namespace loginform
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (deansUsername.Text == username && deansPassword.Text == password)
+            if (deansUsername.Text == "gamemaster" && deansPassword.Text == "endcurrentgame")
+            {
+                this.Close();
+            }
+            else if (deansUsername.Text == username && deansPassword.Text == password)
             {
                 loginPanel.Visible = false;
                 loggedInPanel.Visible = true;
-            }
-            if (deansUsername.Text == "gamemaster" && deansPassword.Text == "endcurrentgame")
-            {
-                this.Close();                
+                logoutButton.Visible = true;
+            }else{
+                deansPassword.Clear();
+                deansUsername.Clear();
+                incorrectUser.Text = "Username/Password is incorrent";
             }
             
+
         }
 
         private void calender_Click(object sender, EventArgs e)
@@ -73,6 +85,8 @@ namespace loginform
 
             studentsPanel.Visible = false;
             classesPanel.Visible = false;
+            searchBtn.Visible = false;
+            searchText.Visible = false;
         }
 
         private void Classes_Click(object sender, EventArgs e)
@@ -88,6 +102,8 @@ namespace loginform
 
             classesPanel.Visible = true;
             studentsPanel.Visible = false;
+            searchBtn.Visible = false;
+            searchText.Visible = false;
         }
 
         private void students_Click(object sender, EventArgs e)
@@ -103,13 +119,15 @@ namespace loginform
 
             classesPanel.Visible = true;
             studentsPanel.Visible = true;
+            searchBtn.Visible = true;
+            searchText.Visible = true;
         }
 
         private void editLabel_Click(object sender, EventArgs e)
-        {          
+        {
             editPanel.Visible = true;
         }
-        
+
         private void saveButton_Click(object sender, EventArgs e)
         {
             editPanel.Visible = false;
@@ -119,7 +137,7 @@ namespace loginform
             string f = foreignBox.Text;
             string h = historyBox.Text;
             string p = psychBox.Text;
-            
+
             studentTable.CurrentRow.Cells[2].Value = m;
             studentTable.CurrentRow.Cells[3].Value = s;
             studentTable.CurrentRow.Cells[4].Value = en;
@@ -131,7 +149,7 @@ namespace loginform
 
         }
 
-        private void studentTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void studentTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string first = studentTable.CurrentRow.Cells[1].Value.ToString();
             string last = studentTable.CurrentRow.Cells[0].Value.ToString();
@@ -143,7 +161,7 @@ namespace loginform
             string p = studentTable.CurrentRow.Cells[7].Value.ToString();
             string gpa = studentTable.CurrentRow.Cells[8].Value.ToString();
             selectedName.Text = last + ", " + first;
-            selectedGpa.Text = "GPA: "+gpa;
+            selectedGpa.Text = "GPA: " + gpa;
             mathBox.Text = m;
             scienceBox.Text = s;
             englishBox.Text = en;
@@ -200,7 +218,26 @@ namespace loginform
         {
             loggedInPanel.Visible = false;
             loginPanel.Visible = true;
+            logoutButton.Visible = false;
             this.Close();
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            string value = searchText.Text.ToLower();
+            int valueL = value.Length;
+            value = value.First().ToString().ToUpper() + String.Join("", value.Skip(1));
+
+            foreach (DataGridViewRow row in studentTable.Rows)
+            {
+                string last = row.Cells[0].Value.ToString();
+                string first = row.Cells[1].Value.ToString();
+                if ( last.StartsWith(value) || first.StartsWith(value) || first+" "+last == value || last+ " " +first == value )
+                {
+                    studentTable.ClearSelection();
+                    studentTable.CurrentCell = row.Cells[0];
+                }
+            }
         }
     }
 }

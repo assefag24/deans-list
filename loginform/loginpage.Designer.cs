@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.header = new System.Windows.Forms.Panel();
+            this.logoutButton = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.loginPanel = new System.Windows.Forms.Panel();
             this.loginButton = new System.Windows.Forms.Button();
@@ -38,19 +39,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.footer = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.loggedInPanel = new System.Windows.Forms.Panel();
+            this.searchText = new System.Windows.Forms.TextBox();
+            this.searchBtn = new System.Windows.Forms.Label();
             this.calenderPanel = new System.Windows.Forms.Panel();
             this.classesPanel = new System.Windows.Forms.Panel();
-            this.studentsPanel = new System.Windows.Forms.Panel();
             this.editPanel = new System.Windows.Forms.Panel();
             this.psychBox = new System.Windows.Forms.TextBox();
             this.historyBox = new System.Windows.Forms.TextBox();
@@ -67,20 +62,21 @@
             this.selectedGpa = new System.Windows.Forms.Label();
             this.selectedName = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Label();
+            this.studentsPanel = new System.Windows.Forms.Panel();
             this.editLabel = new System.Windows.Forms.Label();
             this.studentTable = new System.Windows.Forms.DataGridView();
             this.students = new System.Windows.Forms.Label();
             this.Classes = new System.Windows.Forms.Label();
             this.calender = new System.Windows.Forms.Label();
-            this.logoutButton = new System.Windows.Forms.Label();
+            this.incorrectUser = new System.Windows.Forms.Label();
             this.header.SuspendLayout();
             this.loginPanel.SuspendLayout();
             this.footer.SuspendLayout();
             this.loggedInPanel.SuspendLayout();
             this.calenderPanel.SuspendLayout();
             this.classesPanel.SuspendLayout();
-            this.studentsPanel.SuspendLayout();
             this.editPanel.SuspendLayout();
+            this.studentsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,6 +89,22 @@
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(1814, 112);
             this.header.TabIndex = 0;
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.AutoSize = true;
+            this.logoutButton.BackColor = System.Drawing.Color.White;
+            this.logoutButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.logoutButton.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutButton.ForeColor = System.Drawing.Color.Black;
+            this.logoutButton.Location = new System.Drawing.Point(1436, 49);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
+            this.logoutButton.Size = new System.Drawing.Size(107, 45);
+            this.logoutButton.TabIndex = 7;
+            this.logoutButton.Text = "log out";
+            this.logoutButton.Visible = false;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // label1
             // 
@@ -109,6 +121,7 @@
             // 
             this.loginPanel.BackColor = System.Drawing.Color.White;
             this.loginPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.loginPanel.Controls.Add(this.incorrectUser);
             this.loginPanel.Controls.Add(this.loginButton);
             this.loginPanel.Controls.Add(this.deansPassword);
             this.loginPanel.Controls.Add(this.deansUsername);
@@ -184,111 +197,12 @@
             this.footer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.footer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.footer.Controls.Add(this.button7);
-            this.footer.Controls.Add(this.button6);
-            this.footer.Controls.Add(this.button9);
-            this.footer.Controls.Add(this.button5);
-            this.footer.Controls.Add(this.button8);
-            this.footer.Controls.Add(this.button4);
-            this.footer.Controls.Add(this.button3);
             this.footer.Controls.Add(this.label3);
             this.footer.Controls.Add(this.label2);
-            this.footer.Location = new System.Drawing.Point(1, 728);
+            this.footer.Location = new System.Drawing.Point(1, 696);
             this.footer.Name = "footer";
             this.footer.Size = new System.Drawing.Size(1783, 114);
             this.footer.TabIndex = 1;
-            // 
-            // button7
-            // 
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(1024, 47);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(155, 30);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Emergency Info";
-            this.button7.UseCompatibleTextRendering = true;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(861, 51);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(157, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Terms of Use";
-            this.button6.UseCompatibleTextRendering = true;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(635, 47);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(220, 30);
-            this.button9.TabIndex = 4;
-            this.button9.Text = "Search Breakout";
-            this.button9.UseCompatibleTextRendering = true;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(635, 44);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(220, 30);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Search Breakout";
-            this.button5.UseCompatibleTextRendering = true;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(406, 47);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(225, 30);
-            this.button8.TabIndex = 3;
-            this.button8.Text = "Maps &  Directions";
-            this.button8.UseCompatibleTextRendering = true;
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(406, 44);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(225, 30);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Maps &  Directions";
-            this.button4.UseCompatibleTextRendering = true;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(221, 53);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(179, 19);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "BU Home";
-            this.button3.UseCompatibleTextRendering = true;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label3
             // 
@@ -314,15 +228,42 @@
             // 
             // loggedInPanel
             // 
+            this.loggedInPanel.Controls.Add(this.searchText);
+            this.loggedInPanel.Controls.Add(this.searchBtn);
             this.loggedInPanel.Controls.Add(this.calenderPanel);
             this.loggedInPanel.Controls.Add(this.students);
             this.loggedInPanel.Controls.Add(this.Classes);
             this.loggedInPanel.Controls.Add(this.calender);
-            this.loggedInPanel.Location = new System.Drawing.Point(99, 170);
+            this.loggedInPanel.Location = new System.Drawing.Point(99, 175);
             this.loggedInPanel.Name = "loggedInPanel";
-            this.loggedInPanel.Size = new System.Drawing.Size(1497, 668);
+            this.loggedInPanel.Size = new System.Drawing.Size(1495, 663);
             this.loggedInPanel.TabIndex = 4;
             this.loggedInPanel.Visible = false;
+            // 
+            // searchText
+            // 
+            this.searchText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchText.Location = new System.Drawing.Point(1099, 45);
+            this.searchText.Name = "searchText";
+            this.searchText.Size = new System.Drawing.Size(195, 27);
+            this.searchText.TabIndex = 10;
+            this.searchText.Visible = false;
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.AutoSize = true;
+            this.searchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.searchBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.searchBtn.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.ForeColor = System.Drawing.Color.White;
+            this.searchBtn.Location = new System.Drawing.Point(1331, 45);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Padding = new System.Windows.Forms.Padding(20, 3, 20, 3);
+            this.searchBtn.Size = new System.Drawing.Size(104, 31);
+            this.searchBtn.TabIndex = 9;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.Visible = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // calenderPanel
             // 
@@ -331,7 +272,7 @@
             this.calenderPanel.Controls.Add(this.classesPanel);
             this.calenderPanel.Location = new System.Drawing.Point(182, 90);
             this.calenderPanel.Name = "calenderPanel";
-            this.calenderPanel.Size = new System.Drawing.Size(1328, 722);
+            this.calenderPanel.Size = new System.Drawing.Size(1328, 717);
             this.calenderPanel.TabIndex = 8;
             // 
             // classesPanel
@@ -341,22 +282,9 @@
             this.classesPanel.Controls.Add(this.studentsPanel);
             this.classesPanel.Location = new System.Drawing.Point(3, 0);
             this.classesPanel.Name = "classesPanel";
-            this.classesPanel.Size = new System.Drawing.Size(1305, 719);
+            this.classesPanel.Size = new System.Drawing.Size(1305, 714);
             this.classesPanel.TabIndex = 0;
             this.classesPanel.Visible = false;
-            // 
-            // studentsPanel
-            // 
-            this.studentsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.studentsPanel.Controls.Add(this.editPanel);
-            this.studentsPanel.Controls.Add(this.editLabel);
-            this.studentsPanel.Controls.Add(this.studentTable);
-            this.studentsPanel.Location = new System.Drawing.Point(3, 3);
-            this.studentsPanel.Name = "studentsPanel";
-            this.studentsPanel.Size = new System.Drawing.Size(1299, 782);
-            this.studentsPanel.TabIndex = 9;
-            this.studentsPanel.Visible = false;
             // 
             // editPanel
             // 
@@ -383,8 +311,10 @@
             // 
             // psychBox
             // 
+            this.psychBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.psychBox.Location = new System.Drawing.Point(810, 152);
             this.psychBox.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
+            this.psychBox.MaxLength = 1;
             this.psychBox.Name = "psychBox";
             this.psychBox.Size = new System.Drawing.Size(100, 22);
             this.psychBox.TabIndex = 23;
@@ -392,8 +322,10 @@
             // 
             // historyBox
             // 
+            this.historyBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.historyBox.Location = new System.Drawing.Point(667, 152);
             this.historyBox.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
+            this.historyBox.MaxLength = 1;
             this.historyBox.Name = "historyBox";
             this.historyBox.Size = new System.Drawing.Size(100, 22);
             this.historyBox.TabIndex = 22;
@@ -401,8 +333,10 @@
             // 
             // foreignBox
             // 
+            this.foreignBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.foreignBox.Location = new System.Drawing.Point(524, 152);
             this.foreignBox.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
+            this.foreignBox.MaxLength = 1;
             this.foreignBox.Name = "foreignBox";
             this.foreignBox.Size = new System.Drawing.Size(100, 22);
             this.foreignBox.TabIndex = 21;
@@ -410,8 +344,10 @@
             // 
             // englishBox
             // 
+            this.englishBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.englishBox.Location = new System.Drawing.Point(381, 152);
             this.englishBox.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
+            this.englishBox.MaxLength = 1;
             this.englishBox.Name = "englishBox";
             this.englishBox.Size = new System.Drawing.Size(100, 22);
             this.englishBox.TabIndex = 20;
@@ -419,8 +355,10 @@
             // 
             // scienceBox
             // 
+            this.scienceBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.scienceBox.Location = new System.Drawing.Point(238, 152);
             this.scienceBox.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
+            this.scienceBox.MaxLength = 1;
             this.scienceBox.Name = "scienceBox";
             this.scienceBox.Size = new System.Drawing.Size(100, 22);
             this.scienceBox.TabIndex = 19;
@@ -428,8 +366,10 @@
             // 
             // mathBox
             // 
+            this.mathBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.mathBox.Location = new System.Drawing.Point(95, 152);
             this.mathBox.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
+            this.mathBox.MaxLength = 1;
             this.mathBox.Name = "mathBox";
             this.mathBox.Size = new System.Drawing.Size(100, 22);
             this.mathBox.TabIndex = 18;
@@ -492,33 +432,48 @@
             // selectedGpa
             // 
             this.selectedGpa.AutoSize = true;
-            this.selectedGpa.Location = new System.Drawing.Point(93, 58);
+            this.selectedGpa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectedGpa.Location = new System.Drawing.Point(90, 59);
             this.selectedGpa.Name = "selectedGpa";
-            this.selectedGpa.Size = new System.Drawing.Size(0, 17);
+            this.selectedGpa.Size = new System.Drawing.Size(0, 25);
             this.selectedGpa.TabIndex = 11;
             // 
             // selectedName
             // 
             this.selectedName.AutoSize = true;
-            this.selectedName.Location = new System.Drawing.Point(93, 28);
+            this.selectedName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectedName.Location = new System.Drawing.Point(90, 20);
             this.selectedName.Name = "selectedName";
-            this.selectedName.Size = new System.Drawing.Size(0, 17);
+            this.selectedName.Size = new System.Drawing.Size(0, 25);
             this.selectedName.TabIndex = 10;
             // 
             // saveButton
             // 
             this.saveButton.AutoSize = true;
-            this.saveButton.BackColor = System.Drawing.Color.White;
+            this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.saveButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.saveButton.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.ForeColor = System.Drawing.Color.Black;
-            this.saveButton.Location = new System.Drawing.Point(953, 129);
+            this.saveButton.ForeColor = System.Drawing.Color.White;
+            this.saveButton.Location = new System.Drawing.Point(953, 143);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
-            this.saveButton.Size = new System.Drawing.Size(89, 45);
+            this.saveButton.Padding = new System.Windows.Forms.Padding(20, 3, 20, 3);
+            this.saveButton.Size = new System.Drawing.Size(89, 31);
             this.saveButton.TabIndex = 9;
             this.saveButton.Text = "Save";
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // studentsPanel
+            // 
+            this.studentsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.studentsPanel.Controls.Add(this.editPanel);
+            this.studentsPanel.Controls.Add(this.editLabel);
+            this.studentsPanel.Controls.Add(this.studentTable);
+            this.studentsPanel.Location = new System.Drawing.Point(0, 0);
+            this.studentsPanel.Name = "studentsPanel";
+            this.studentsPanel.Size = new System.Drawing.Size(1299, 777);
+            this.studentsPanel.TabIndex = 9;
+            this.studentsPanel.Visible = false;
             // 
             // editLabel
             // 
@@ -540,6 +495,7 @@
             this.studentTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.studentTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.studentTable.Location = new System.Drawing.Point(3, 3);
+            this.studentTable.MultiSelect = false;
             this.studentTable.Name = "studentTable";
             this.studentTable.ReadOnly = true;
             this.studentTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
@@ -547,7 +503,7 @@
             this.studentTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.studentTable.Size = new System.Drawing.Size(1245, 379);
             this.studentTable.TabIndex = 0;
-            this.studentTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentTable_CellContentClick);
+            this.studentTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentTable_CellClick);
             // 
             // students
             // 
@@ -594,27 +550,21 @@
             this.calender.Text = "Calender";
             this.calender.Click += new System.EventHandler(this.calender_Click);
             // 
-            // logoutButton
+            // incorrectUser
             // 
-            this.logoutButton.AutoSize = true;
-            this.logoutButton.BackColor = System.Drawing.Color.White;
-            this.logoutButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.logoutButton.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutButton.ForeColor = System.Drawing.Color.Black;
-            this.logoutButton.Location = new System.Drawing.Point(1436, 49);
-            this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
-            this.logoutButton.Size = new System.Drawing.Size(107, 45);
-            this.logoutButton.TabIndex = 7;
-            this.logoutButton.Text = "log out";
-            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            this.incorrectUser.AutoSize = true;
+            this.incorrectUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incorrectUser.Location = new System.Drawing.Point(33, 306);
+            this.incorrectUser.Name = "incorrectUser";
+            this.incorrectUser.Size = new System.Drawing.Size(0, 25);
+            this.incorrectUser.TabIndex = 6;
             // 
             // loginpage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(1783, 841);
+            this.ClientSize = new System.Drawing.Size(1783, 809);
             this.Controls.Add(this.footer);
             this.Controls.Add(this.header);
             this.Controls.Add(this.loggedInPanel);
@@ -632,10 +582,10 @@
             this.loggedInPanel.PerformLayout();
             this.calenderPanel.ResumeLayout(false);
             this.classesPanel.ResumeLayout(false);
-            this.studentsPanel.ResumeLayout(false);
-            this.studentsPanel.PerformLayout();
             this.editPanel.ResumeLayout(false);
             this.editPanel.PerformLayout();
+            this.studentsPanel.ResumeLayout(false);
+            this.studentsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentTable)).EndInit();
             this.ResumeLayout(false);
 
@@ -655,13 +605,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button loginButton;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel loggedInPanel;
         private System.Windows.Forms.Label calender;
         private System.Windows.Forms.Label students;
@@ -688,5 +631,8 @@
         private System.Windows.Forms.Label selectedName;
         private System.Windows.Forms.Label saveButton;
         private System.Windows.Forms.Label logoutButton;
+        private System.Windows.Forms.TextBox searchText;
+        private System.Windows.Forms.Label searchBtn;
+        private System.Windows.Forms.Label incorrectUser;
     }
 }

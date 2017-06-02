@@ -218,6 +218,7 @@
             this.Controls.Add(this.newName);
             this.Name = "takeNames";
             this.Text = "takeNames";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.takeNames_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.playerTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

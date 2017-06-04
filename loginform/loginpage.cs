@@ -16,7 +16,7 @@ namespace loginform
         int width;
         public string username;
         public string password;
-
+        public string university;
         public loginpage()
         {
             InitializeComponent();
@@ -25,8 +25,10 @@ namespace loginform
             header.Left = 0;
             footer.Left = 0;
             loggedInPanel.Left = 0;
-
-            AcceptButton = loginButton;
+            
+            
+            this.ActiveControl = deansUsername;
+            deansUsername.Focus();
 
             loginPanel.Location = new Point(
                  this.ClientSize.Width / 2 - loginPanel.Size.Width / 2,
@@ -44,6 +46,7 @@ namespace loginform
             loggedInPanel.Width = width;
 
             deansPassword.PasswordChar = '*';
+            universityName.Text = university;
 
         }
 
@@ -60,16 +63,18 @@ namespace loginform
             }
             else if (deansUsername.Text == username && deansPassword.Text == password)
             {
+                deansPassword.Clear();
+                deansUsername.Clear();
+
                 loginPanel.Visible = false;
                 loggedInPanel.Visible = true;
                 logoutButton.Visible = true;
-            }else{
+            }
+            else{
                 deansPassword.Clear();
                 deansUsername.Clear();
                 incorrectUser.Text = "Username/Password is incorrent";
-            }
-            
-
+            }            
         }
 
         private void calender_Click(object sender, EventArgs e)
@@ -232,12 +237,39 @@ namespace loginform
             {
                 string last = row.Cells[0].Value.ToString();
                 string first = row.Cells[1].Value.ToString();
-                if ( last.StartsWith(value) || first.StartsWith(value) || first+" "+last == value || last+ " " +first == value )
+                if (last.StartsWith(value) || first.StartsWith(value) || first + " " + last == value || last + " " + first == value)
                 {
                     studentTable.ClearSelection();
                     studentTable.CurrentCell = row.Cells[0];
+                    break;
                 }
             }
+            
+        }
+
+        private void searchText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                searchBtn_Click(sender, e);
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void deansPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginButton.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

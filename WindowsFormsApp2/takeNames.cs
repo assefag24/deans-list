@@ -18,13 +18,17 @@ namespace WindowsFormsApp2
         private Student student = new Student();
         private Game gameInfo = new Game();
         private ListOfNames list;
+        BindingSource playerBind = new BindingSource();
 
         public takeNames()
         {
             InitializeComponent();
+            this.ActiveControl = username;
+            username.Focus();
 
             playerTable.AutoGenerateColumns = true;
-            playerTable.DataSource = players;
+            playerBind.DataSource = players;
+            playerTable.DataSource = playerBind;            
         }
 
         private void addName_Click(object sender, EventArgs e)
@@ -59,8 +63,8 @@ namespace WindowsFormsApp2
 
                 players.Add(new Student
                 {
-                    firstName = firstName,
-                    lastName = lastName,
+                    Firstname = firstName,
+                    Lastname = lastName,
                     MathClass = mG,
                     Science = sG,
                     French = fG,
@@ -72,8 +76,7 @@ namespace WindowsFormsApp2
 
                 first.Clear();
                 last.Clear();
-                playerTable.DataSource = null;
-                playerTable.DataSource = players;
+                playerBind.ResetBindings(false);
             }
         }
 
@@ -81,7 +84,7 @@ namespace WindowsFormsApp2
         {
             if (string.IsNullOrWhiteSpace(gameInfo.username) || string.IsNullOrWhiteSpace(gameInfo.password))
             {
-                startFail.Text = "Please save a Username and Password";
+                startFail.Text = "Please save Game Info";
             }
             else
             {
@@ -89,12 +92,13 @@ namespace WindowsFormsApp2
 
                 list.allStudents.AddRange(players);
                 dummyData();
-                list.allStudents.Sort((x, y) => string.Compare(x.lastName, y.lastName));
+                list.allStudents.Sort((x, y) => string.Compare(x.Lastname, y.Lastname));
 
                 loginpage newGame = new loginpage();
 
                 newGame.username = gameInfo.username;
                 newGame.password = gameInfo.password;
+                newGame.university = gameInfo.universityName;
                 newGame.studentTable.AutoGenerateColumns = true;
                 newGame.studentTable.DataSource = list.allStudents;
 
@@ -127,7 +131,7 @@ namespace WindowsFormsApp2
                 decimal g;
                 g = calcGpa(mG, sG, enG, fG, hG, pG);
                 
-                list.allStudents.Add(new Student { firstName = firstNames[first], lastName = lastNames[l], MathClass = mG, Science = sG, French = fG, History = hG, English = enG, Psychology = pG, GPA = g });
+                list.allStudents.Add(new Student { Firstname = firstNames[first], Lastname = lastNames[l], MathClass = mG, Science = sG, French = fG, History = hG, English = enG, Psychology = pG, GPA = g });
             }
         }
 
@@ -207,20 +211,22 @@ namespace WindowsFormsApp2
 
         private void saveUser_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(username.Text) || string.IsNullOrWhiteSpace(password.Text))
+            if (string.IsNullOrWhiteSpace(username.Text) || string.IsNullOrWhiteSpace(password.Text) || string.IsNullOrWhiteSpace(universityName.Text))
             {
-                passwordInfo.Text = "Please fill Username and Password";
+                passwordInfo.Text = "Please fill all Game Info";
             }
             else
             {
-                passwordInfo.Text = "Username and Password saved";
+                passwordInfo.Text = "Game Info saved";
                 startFail.Text = "";
 
                 gameInfo.username = username.Text;
                 gameInfo.password = password.Text;
+                gameInfo.universityName = universityName.Text;
 
                 username.Text = gameInfo.username;
                 password.Text = gameInfo.password;
+                universityName.Text = gameInfo.universityName;
             }
         }
 
@@ -231,9 +237,41 @@ namespace WindowsFormsApp2
             playerTable.DataSource = players;
         }
 
-        private void takeNames_KeyPress(object sender, KeyPressEventArgs e)
+        private void password_KeyDown(object sender, KeyEventArgs e)
         {
-            
+            if (e.KeyCode == Keys.Enter)
+            {
+                saveUser.PerformClick();
+                first.Focus();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void last_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                addName.PerformClick();
+                first.Focus();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }        
+
+        private void first_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                last.Focus();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void takeNames_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
